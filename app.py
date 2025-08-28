@@ -2510,7 +2510,7 @@ def create_data_summary(csv_data: list,
     summary["total_sources"] = len(identifiers)
     return summary
 
-@app.post("/aianalyst/")
+@app.post("/api")
 async def aianalyst(request: Request):
     # Parse form data to get all files regardless of field names
     form = await request.form()
@@ -3829,3 +3829,4 @@ async def aianalyst(request: Request):
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))
     uvicorn.run(app, host="0.0.0.0", port=port)
+
